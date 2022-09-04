@@ -1,0 +1,19 @@
+{% extends "base/base.njk" %}
+
+{% block content %}
+  <div class="h-screen grid items-center justify-items-center content-center bg-gray-200">
+    <h1 class="mb-4 text-4xl text-gray-800 font-bold font-sans text-primary-400">
+      11ty templating
+    </h1>
+    {% set name = 'FooBar' %}
+  	{% include './_variable.html' %}
+
+  	<!-- Include, passing multiple variables -->
+    {% set sectionHeader = { title: 'Multiple variables', subtitle: '_variables.html' } %}
+    {% include './_variables.html' %}
+
+    <!-- No more relative path due to being in included -->
+  	{% include 'included.html' %}
+  </div>
+  
+{% endblock content %}

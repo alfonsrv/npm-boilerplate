@@ -1,0 +1,23 @@
+{
+  "name": "npm_playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "eleventy --serve --port 5172",
+    "tailwind": "tailwindcss -i ./source.css -o ./src/assets/output.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production tailwindcss build -i ./source.css -o ./src/assets/output.css && cleancss -o ./src/assets/output.min.css ./src/assets/output.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "autoprefixer": "^10.4.8",
+    "clean-css-cli": "^5.6.1",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  }
+}

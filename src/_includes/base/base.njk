@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title if title else "Undefined" }}</title>
+  <meta name="description" content="Boilerplate NPM project">
+  <meta name="author" content="github/alfonsrv">
+
+  <meta property="og:title" content="{{ title if title else "Undefined" }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rausys.de">
+  <meta property="og:description" content="Boilerplate NPM project">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/assets/output.css?v=1.0">
+
+</head>
+
+<body>
+  <!-- 11ty requires body for browser auto-refresh to work -->
+  <main>
+    {% block content %}
+    {% endblock content %}
+  </main>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

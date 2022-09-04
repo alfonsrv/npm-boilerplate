@@ -19,6 +19,14 @@ module.exports = function(eleventyConfig) {
 
     return content
   });
+  eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
+    postcss([tailwindcss(require('./tailwind.config.js')), autoprefixer()])
+      .process(cssCode)
+      .then(
+        (r) => done(null, r.css),
+        (e) => done(e, null)
+      );
+  });
   return {
     htmlTemplateEngine: "njk",
     dir: {
